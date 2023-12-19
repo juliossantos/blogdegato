@@ -87,7 +87,7 @@ figure{
 
 figure img {
     width: 100%;
-    animation: color 2s;
+    animation: scale 2s;
 }
 .title, main p, sidebar h2, .articles{
     padding: 0 2.2rem;
@@ -107,12 +107,18 @@ figure img {
     border-radius: 50%;
     background-color: var(--color-button);
     justify-content: center;
+    transition: 1s;
 }
 
 .like button + button{
     margin-left: 1.2rem;
 
 }  
+
+.like button:hover {
+    filter: contrast(5);
+    cursor: pointer;
+}
 
 main {
     max-width: 80rem;
@@ -219,9 +225,9 @@ footer {
     
 }
 
-@keyframes color {
+@keyframes scale {
     0% {
-        transform: scale(0.5);
+        transform: scale(0.8);
     }
 
     50% {
