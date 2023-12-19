@@ -1,0 +1,262 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+:root{
+    font-size: 62.5%;
+    --color-top-botton: #387E96;
+    --color-button: #065E7C;   
+    --color-letter: #121214
+
+}
+
+.app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.contaner {
+    
+    margin: 0 auto;
+}
+
+header {
+    justify-content: center;
+    background: var(--color-top-botton);
+    padding: 1.2rem 2.8rem;
+   
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    
+}
+
+.logo {
+    padding: .8rem;
+    background: white;
+    border-radius: 50%;
+}
+
+.avatar img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+
+form{
+    flex: 1;
+}
+
+form input {
+    width:  100%;
+    background: rgba(255, 255, 255, 0.20);
+    border: none;
+    font-size: 1.6rem;
+    color: #ffff;
+    padding: 1.2rem 1.4rem;
+    border-radius: 4px;
+
+}
+
+form input::placeholder{
+    color: #ffff;
+
+}
+figure{
+    max-width: 80rem;
+}
+
+figure img {
+    width: 100%;
+    animation: color 2s;
+}
+.title, main p, sidebar h2, .articles{
+    padding: 0 2.2rem;
+}
+.title h1{
+    margin-top: 3.1rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 160%;
+
+}
+
+.like button {
+    margin-top: .8rem;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--color-button);
+    justify-content: center;
+}
+
+.like button + button{
+    margin-left: 1.2rem;
+
+}  
+
+main {
+    max-width: 80rem;
+}
+
+main p {
+    
+    margin-top: 3.1rem;
+    color: var(--color-letter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 3.4rem;
+    animation: letter-move 1s;
+}
+
+sidebar h2 {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    animation: letter 1.5s;
+}
+
+sidebar {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    max-width: 40rem;
+    
+    margin-bottom: 3.9rem;
+    
+}
+
+sidebar h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+sidebar p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.articles {
+    display: flex;
+    gap: 1.6rem;
+    animation: delay, color 1s var(--delay) backwards;
+    --delay: 200ms;
+}
+
+.articles img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.articles img:hover{
+    filter: saturate(150%) hue-rotate(20deg) brightness(1.2);
+    transform: scale(1.1) rotate(2deg);
+}
+
+footer {
+    background-color: var(--color-top-botton);
+    color: #ffff;
+    text-align: center;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+  
+    font-weight: 600;
+}
+
+@media (min-width:1024px){
+    .contaner {
+        display: grid;
+        grid-template-columns: 80.3rem 1fr;
+        margin-top: 4.4rem;
+        column-gap: 3.4rem;
+        padding: 0 10.9rem;
+    }
+
+    .header-wrapper {
+        padding: 0 11.2rem;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 35.6rem;
+    }
+
+    main p, .title, sidebar h2, .articles {
+        padding: 0;
+    }
+
+    .like button {
+        margin-top: 3.1rem;
+    }
+    
+}
+
+@keyframes color {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes delay {
+    0% {
+        opacity: 0;
+    }
+
+    50% {opacity: 1;
+    }
+}
+
+@keyframes letter {
+    0% {
+        letter-spacing: 8px;
+    }
+
+    50% {
+        letter-spacing: -2px;
+    }
+}
+
+@keyframes letter-move {
+    0% {
+        transform: translateY(1px);
+    }
+
+    10% {
+        transform: translateY(3px);
+    }
+
+    30% {
+        transform: translateY(8px);
+    }
+
+    50%{
+        transform: translateY(4px);
+    }
+}
